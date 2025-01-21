@@ -30,10 +30,6 @@ public class Main {
             graph[y].add(x);
         }
 
-        for (int i = 1; i < graph.length; i++) {
-            Collections.sort(graph[i]);
-        }
-
         num = 1;
         while (cnt < graph.length-1) {
             bfs(num);
