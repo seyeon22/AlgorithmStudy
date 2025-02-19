@@ -1,0 +1,7 @@
+-- 개발자 ID, 이메일, 이름, 성 조회 (FROM DEVELOPERS)
+-- Python이나 C# 스킬 가진 개발자 정보 조회
+-- ID 기준으로 오름차순 정렬
+SELECT ID, EMAIL, FIRST_NAME, LAST_NAME
+FROM DEVELOPERS
+WHERE (SKILL_CODE & (SELECT SUM(CODE) FROM SKILLCODES WHERE NAME IN('Python', 'C#'))) > 0
+ORDER BY ID;
