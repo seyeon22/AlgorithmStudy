@@ -1,0 +1,6 @@
+-- (부모의 형질 모두 보유한) 대장균의 ID, 대장균의 형질, 부모 대장균의 형질 출력
+-- ID에 대해 오름차순 정렬
+SELECT e.ID, e.GENOTYPE, d.GENOTYPE AS PARENT_GENOTYPE
+FROM ECOLI_DATA as e LEFT JOIN ECOLI_DATA as d ON e.PARENT_ID=d.ID
+WHERE e.PARENT_ID IS NOT NULL AND (e.GENOTYPE & d.GENOTYPE) = d.GENOTYPE
+ORDER BY ID;
