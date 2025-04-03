@@ -9,11 +9,10 @@ public class Main {
         char[] ch = s.toCharArray();
 
         Stack<Character> stack = new Stack<>();
-        stack.push(ch[0]);
 
         int ans = 0;
         boolean flag = false;
-        for (int i = 1; i < ch.length; i++) {
+        for (int i = 0; i < ch.length; i++) {
             if (!stack.isEmpty() && stack.peek() != ch[i]) {
                 stack.pop();
                 if (!flag) {
