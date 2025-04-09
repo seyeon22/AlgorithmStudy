@@ -59,11 +59,7 @@ public class Main {
             }
 
             for (int i = 0; i < n; i++) {
-                if (!visit[i][0]) {
-                    cnt++;
-                    bfs(i, 0);
-                }
-                for (int j = 1; j < n; j++) {
+                for (int j = 0; j < n; j++) {
                     if (!visit[i][j]) {
                         cnt++;
                         bfs(i, j);
